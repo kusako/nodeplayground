@@ -1,17 +1,31 @@
 <html>
-  <head><title>socket.io Test</title>
+  <head>
+    <title>socket.io Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div id="status">Not connected.</div>
+    <form id="messageForm" action="">
+        <label for="input">Nachricht: </label>
+        <input id="input" />
+        <input type="submit" id="submit" />
+    </form>
     <div id="message"></div>
     <script src="/socket.io/socket.io.js"></script> 
     <script>
         function $(id) {
             return document.getElementById(id);
         }
+        $('messageForm').onsubmit = function() {
+        
+            $('message').innerHTML = 'you&gt; ' + $('input').value + '<br/>' + $('message').innerHTML;
+            socket.send($('input').value);
+            return false;
+        }
         var socket = new io.Socket(null);
+        
         socket.on('connect', function(){ $('status').innerHTML = 'Connected'; }); 
-        socket.on('message', function(message){ $('message').innerHTML = message; }); 
+        socket.on('message', function(message){ $('message').innerHTML = 'them&gt; ' + message + '<br/>' + $('message').innerHTML; }); 
         socket.on('disconnect', function(){ $('status').innerHTML = "Not connected."; }); 
         socket.connect();
     </script>    
