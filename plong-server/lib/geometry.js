@@ -1,22 +1,24 @@
 function Rectangle(x, y, w, h) {
-	return {
-		x: x,
-		y: y,
-		w: w,
-		h: h,
-		left: function left() {
-			return x;
-		},
-		right: function right() {
-			return x + w;
-		},
-		top: function top() {
-			return y;
-		},
-		bottom: function bottom() {
-			return y + h;
-		}
-	};
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+}
+
+Rectangle.prototype.left = function () {
+	return this.x;
+}
+
+Rectangle.prototype.right = function () {
+	return this.x + this.w;
+}
+
+Rectangle.prototype.top = function () {
+	return this.y;
+}
+
+Rectangle.prototype.bottom = function () {
+	return this.y + this.h;
 }
 
 function collide(rect1, rect2) {
