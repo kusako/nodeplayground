@@ -1,4 +1,4 @@
-var geometry = require('geometry'),
+var geometry = require('./geometry'),
 	log = require('console').log;
 
 function Paddle(x, y) {
