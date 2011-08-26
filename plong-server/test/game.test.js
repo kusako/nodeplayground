@@ -12,6 +12,6 @@ module.exports = {
 		});
 		setTimeout(function () {
 			game.stop();
-		}, 5000);
+		}, 10000);
 	}
 }

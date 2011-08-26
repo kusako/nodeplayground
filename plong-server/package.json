@@ -8,6 +8,8 @@
     },
     "dependencies": {
 		"expresso": ">=0.7.3",
-		"jslint": ">=0.0.3"
+		"jslint": ">=0.0.3",
+        "socket.io": ">=0.7",
+        "express": ">=2"
     }
 }
