@@ -65,7 +65,7 @@ exports.start = function (onUpdate) {
 		lastTick = thisTick;
 		update(deltaTime);
 		onUpdate(paddle1, paddle2, ball, lastTick);
-	}, 100);
+	}, 500);
 }
 
 exports.stop = function () {

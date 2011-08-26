@@ -9,7 +9,8 @@
 	  var ball;
 	  window.onload = function() {
 		  paper = Raphael(10, 50, 480, 320);
-
+		  paper.rect(0, 0, 480, 320);
+		  
 		  ball = paper.circle(9, 9, 8);
 		  ball.attr({fill: "red"});
 
@@ -20,8 +21,8 @@
 		  		lastTick = data.lastTick;
 		  	}
 		    ball.animate({ 
-			    cx: data.ball.boundingBox.x,
-		        cy: data.ball.boundingBox.y
+			    cx: data.ball.boundingBox.x + 8,
+		        cy: data.ball.boundingBox.y + 8
 		    }, data.lastTick - lastTick);
 		    lastTick = data.lastTick;
 		  });
